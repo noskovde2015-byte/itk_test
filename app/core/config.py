@@ -21,3 +21,11 @@ class DataBaseConfig(BaseModel):
     echo_pool: bool = False
     max_overflow: int = 10
     pool_size: int = 50
+
+
+class Settings(BaseSettings):
+    run: RunConfig = RunConfig()
+    api: ApiPrefix = ApiPrefix()
+
+
+settings = Settings()

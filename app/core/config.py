@@ -18,7 +18,7 @@ class ApiPrefix(BaseModel):
 
 
 class DataBaseConfig(BaseModel):
-    url: AnyUrl
+    url: str = 'sqlite+aiosqlite:///./test.db'
     echo: bool = False
     echo_pool: bool = False
     max_overflow: int = 10
@@ -26,16 +26,9 @@ class DataBaseConfig(BaseModel):
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(
-        env_file=Path(__file__).parent.parent / ".env",
-        case_sensitive=False,
-        env_file_encoding="utf-8",
-        env_prefix="TEST__",
-        env_nested_delimiter="__"
-    )
     run: RunConfig = RunConfig()
     api: ApiPrefix = ApiPrefix()
-    db: DataBaseConfig
+    db: DataBaseConfig = DataBaseConfig()
 
 
 settings = Settings()

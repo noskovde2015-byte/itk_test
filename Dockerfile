@@ -13,7 +13,6 @@ RUN pip install -r requirements.txt
 
 COPY app .
 
-RUN chmod +x prestart.sh
+RUN alembic upgrade head
 
-ENTRYPOINT ["./prestart.sh"]
 CMD ["python", "main.py"]

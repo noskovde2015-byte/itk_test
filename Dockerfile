@@ -13,4 +13,7 @@ RUN pip install -r requirements.txt
 
 COPY app .
 
+RUN chmod +x prestart.sh
+
+ENTRYPOINT ["./prestart.sh"]
 CMD ["python", "main.py"]

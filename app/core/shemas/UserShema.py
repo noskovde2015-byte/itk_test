@@ -20,6 +20,11 @@ class UserCreate(UserBase):
     pass
 
 
+class UserUpdate(UserCreate):
+    """Schema for updating user"""
+    pass
+
+
 class UserRead(UserBase):
     """Shema for reading a user"""
     model_config = ConfigDict(

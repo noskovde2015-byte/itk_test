@@ -8,5 +8,4 @@ class User(Base):
     name: Mapped[str]
     surname: Mapped[str]
     age: Mapped[int]
-    phone: Mapped[int]
     email: Mapped[str]
